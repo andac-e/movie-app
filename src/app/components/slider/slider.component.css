@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap');
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35rem;
+  color: #999;
+  background-color: #000;
+  position: relative;
+  display: block;
+  height: 0;
+  padding-bottom: 40%;
+  font-family: 'Mulish', sans-serif;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 71.1%;
+  height: 100%;
+}
+.backdrop::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    #000 0,
+    transparent 50%,
+    transparent 100%
+  );
+}
+.backdrop > div {
+  width: 100%;
+  display: inline;
+}
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  background: none;
+  transform: translate(-50%, -50%);
+}
+.image {
+  display: inline-block;
+  max-width: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.pane {
+  padding-right: 5rem;
+  padding-left: 5rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+.name {
+  margin: 0 0 1.4rem;
+  font-size: 2.4vw;
+  line-height: 1.1;
+  color: #fff;
+  cursor: pointer;
+}
+.name:focus {
+  outline: none;
+}
+.meta {
+  font-size: 0.9vw;
+  display: flex;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+.info {
+  display: flex;
+  align-items: center;
+}
+.info span {
+  margin-right: 0.4rem;
+}
+.info span:not(:last-child):after {
+  content: "|";
+  margin-right: 9px;
+  margin-left: 9px;
+}
+.desc {
+  display: block;
+  margin-top: 2.5rem;
+  font-size: 0.9vw;
+  color: #fff;
+}
+.trailer {
+  margin-top: 3rem;
+}
+@media (min-width: 1650px) {
+  .trailer {
+    font-size: 0.9vw;
+  }
+}
+.rate {
+  font-size: 12px;
+}
+.rate i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.rate .material-icons {
+  color: #dcf836;
+}
+.rate span {
+  font-size: 16px;
+}
+
+.backdrop_ .head {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+.backdrop_ .title {
+  font-size: 1.8rem;
+}
+.backdrop_ .count {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+.backdrop_ .items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.4rem;
+  margin-left: -0.4rem;
+}
+.backdrop_ .item {
+  padding: 0.4rem;
+}
+.backdrop_ .backdrop_ {
+  width: 50%;
+}
+@media (min-width: 1500px) {
+  .backdrop_ .backdrop_ {
+    width: 20%;
+  }
+}
+@media (min-width: 1800px) {
+  .backdrop_ .backdrop_ {
+    width: 16.6666667%;
+  }
+}
+@media (min-width: 2500px) {
+  .backdrop_ .backdrop_ {
+    width: 14.2857143%;
+  }
+}
+.backdrop_ .poster {
+  width: 33.3333333%;
+}
+@media (min-width: 1500px) {
+  .backdrop_ .poster {
+    width: 16.6666667%;
+  }
+}
+@media (min-width: 1800px) {
+  .backdrop_ .poster {
+    width: 14.2857143%;
+  }
+}
+@media (min-width: 2500px) {
+  .backdrop_ .poster {
+    width: 12.5%;
+  }
+}
