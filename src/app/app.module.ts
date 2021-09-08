@@ -8,14 +8,17 @@ import { AppComponent } from './app.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { CarouselModule } from 'primeng/carousel';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, MovieComponent, NaviComponent, SliderComponent],
+  declarations: [AppComponent, MovieComponent, NaviComponent, SliderComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
