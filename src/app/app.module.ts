@@ -10,9 +10,11 @@ import { NaviComponent } from './components/navi/navi.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CarouselModule } from 'primeng/carousel';
 import { HomeComponent } from './components/home/home.component';
+import { MovieFilterPipe } from './pipes/movie-filter.pipe';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, MovieComponent, NaviComponent, SliderComponent, HomeComponent],
+  declarations: [AppComponent, MovieComponent, NaviComponent, SliderComponent, HomeComponent, MovieFilterPipe, MovieDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,120 @@
+<div class="hero">
+  <div class="backdrop">
+    <div class="lazyloaded">
+      <img
+        class="lazyload image"
+        src="https://image.tmdb.org/t/p/original/{{ movie.backdrop_path }}"
+      />
+    </div>
+  </div>
+  <div class="pane">
+    <div>
+      <div class="name fw-bold">{{ movie.title }}</div>
+      <div class="meta">
+        <div class="info">
+          <span class="rate">
+            <i class="pi pi-star text-warning"></i
+            ><span>{{ movie.vote_average }}</span> /10
+          </span>
+          <span> {{ movie.vote_count }} Reviews</span>
+          <span>{{ movie.release_date | date: "yyyy" }}</span>
+          <span>{{ movie.runtime }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 bg-dark p-3">
+      <div class="listing-space info__movies">
+        <div class="left">
+          <div class="poster">
+            <img
+              src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{
+                movie.poster_path
+              }}"
+            />
+          </div>
+        </div>
+        <div class="right text-light">
+          <div class="overview">
+            <h2 class="title">Hikaye</h2>
+            <div>{{ movie.overview }}</div>
+          </div>
+          <div class="stats">
+            <ul class="list-group">
+              <li>
+                <div class="label">Çıkış Tarihi</div>
+                <div class="value">
+                  {{ movie.release_date | date: "MMMM d, y" }}
+                </div>
+              </li>
+              <li>
+                <div class="label">Süre</div>
+                <div class="value">{{ movie.runtime }} dk.</div>
+              </li>
+              <li *ngIf="movie.budget">
+                <div class="label">Bütçe</div>
+                <div class="value">{{ movie.budget | currency: "USD" }}</div>
+              </li>
+              <li *ngIf="movie.revenue">
+                <div class="label">Gelir</div>
+                <div class="value">{{ movie.revenue | currency: "USD" }}</div>
+              </li>
+
+              <!-- <li *ngIf="movie?.genres.length">
+                                        <div class="label">
+                                            Genre
+                                        </div>
+                                        <div class="comma_" *ngFor="let genre of movie?.genres">
+                                            <a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{ genre?.name }}</a>
+                                        </div>
+                                    </li> -->
+              <li *ngIf="movie.status">
+                <div class="label">Durum</div>
+                <div class="value">
+                  {{ movie.status }}
+                </div>
+              </li>
+              <!-- <li *ngIf="movie.spoken_languages.length">
+                                        <div class="label">
+                                            Language
+                                        </div>
+                                        <div class="comma_" *ngFor="let language of movie.spoken_languages">
+                                            <a>{{ language?.name }}</a>
+                                        </div>
+                                    </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="listing-space">
+        <div class="listing__head">
+          <h2 class="listing__title text-light mt-3">Oyuncu Kadrosu</h2>
+        </div>
+        <p-carousel
+          [value]="casts"
+          [numVisible]="6"
+          [numScroll]="4"
+          [circular]="false"
+        >
+          <ng-template let-cast pTemplate="item">
+            <div class="listing-item-style">
+              <img
+                *ngIf="cast.profile_path"
+                src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{
+                  cast.profile_path
+                }}"
+              />
+              <img *ngIf="!cast.profile_path" />
+              <h6 class="text-light">{{ cast.name }}</h6>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+  </div>
+</div>
