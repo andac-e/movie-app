@@ -13,6 +13,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { HomeComponent } from './components/home/home.component';
 import { MovieFilterPipe } from './pipes/movie-filter.pipe';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     MatPaginatorModule,
     BrowserAnimationsModule,
     CarouselModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

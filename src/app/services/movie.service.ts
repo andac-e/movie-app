@@ -20,6 +20,11 @@ export class MovieService {
     );
   }
 
+  searchMovies(searchValue: string): Observable<any> {
+    return this.httpClient.get(`
+    https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&language=${this.language}&query=${searchValue}&page=1`);
+  }
+
   getMovieCredits(id: number): Observable<Credits> {
     return this.httpClient.get<Credits>(
       `${this.apiUrl}/${id}/credits?api_key=${this.apiKey}&language=${this.language}`
@@ -40,7 +45,7 @@ export class MovieService {
 
   getTopRatedMovies(page:number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
-      `${this.apiUrl}top_rated?api_key=${this.apiKey}&page=${page}&language=tr-TR`
+      `${this.apiUrl}top_rated?api_key=${this.apiKey}&page=${page}&language=en-US`
     );
   }
 

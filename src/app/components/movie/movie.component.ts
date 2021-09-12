@@ -11,12 +11,15 @@ import { Movie } from './movie';
 export class MovieComponent implements OnInit {
   movies: Movie[] = [];
   topRatedMovies: Movie[] = [];
+  searchResults: Movie[] = [];
   totalResults: number = 0;
   pagingInfo: PagingInfo = {
     currentPage: 1,
     itemsPerPage: 18,
     totalItems: this.totalResults,
   };
+  filterText: string = '';
+  loading: boolean = true;
 
   constructor(private movieService: MovieService) {}
 
@@ -27,18 +30,25 @@ export class MovieComponent implements OnInit {
   getPopularMovies() {
     this.movieService.getPopularMovies().subscribe((data) => {
       this.movies = data;
+      this.loading = false;
     });
   }
 
-  getTopRatedMovies(page:number) {
+  getTopRatedMovies(page: number) {
     this.movieService.getTopRatedMovies(page).subscribe((data: any) => {
       this.topRatedMovies = data.results;
       this.totalResults = data.total_results;
-      console.log(this.totalResults);
+      this.loading = false;
     });
   }
 
-  changePage(e:any) {
+  changePage(e: any) {
     this.getTopRatedMovies(e.pageIndex + 1);
+  }
+
+  searchMovies() {
+    this.movieService.searchMovies(this.filterText).subscribe((data) => {
+      this.searchResults = data.results;
+    });
   }
 }
