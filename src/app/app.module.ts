@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieFilterPipe } from './pipes/movie-filter.pipe';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     MovieFilterPipe,
     MovieDetailComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
