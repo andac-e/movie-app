@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+
+.hero {
+  font-family: "Mulish", sans-serif;
+}
+
+body,html {
+  background-color: #212121;
+}
+
+.listing {
+  margin: 2.5rem 1.5rem;
+}
+
+.listing-item-style {
+  background-color: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin: 11px 5px 11px;
+  position: relative;
+  cursor: pointer;
+}
+.listing-item-style:focus {
+  outline-style: none;
+}
+.listing-item-style img {
+  width: 100%;
+  transition: all 0.5s ease-out;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.listing-item-style h6 {
+  font-size: 14px;
+  overflow: hidden;
+  margin: 5px 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 2px 2px;
+  width: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.listing-item-style .rate {
+  font-size: 12px;
+  background: rgba(11, 26, 42, 0.95);
+  padding: 1px 7px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+}
+.listing-item-style .rate i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+.listing-item-style .rate span {
+  font-size: 16px;
+  font-weight: 400;
+}
+.listing-item-style .year {
+  position: absolute;
+  left: 6px;
+  background: rgba(11, 26, 42, 0.95);
+  padding: 1px 7px;
+  border-radius: 5px;
+  top: auto;
+  bottom: 21px;
+  color: #fff;
+  pointer-events: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: transparent;
+}
+.hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  padding: 8px 15px;
+  z-index: 2;
+  width: 120px;
+  height: 38px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.hover i {
+  position: absolute;
+  line-height: 25px;
+  font-size: 13px;
+  left: 8px;
+  top: 6px;
+}
+.listing-item-style:hover .overlay {
+  opacity: 1;
+}
+
+mat-paginator {
+  background: #fff;
+  color: #212121;
+}

@@ -1,1 +1,37 @@
-<p>movie works!</p>
+<div class="hero">
+  <div class="listing">
+    <div class="row">
+      <div
+        class="col-md-2 listing__items"
+        *ngFor="let movie of topRatedMovies | slice: 0:18"
+      >
+        <div routerLink="/movies/{{ movie.id }}">
+          <div class="listing-item-style">
+            <div class="overlay">
+              <div class="hover bg-danger">FİLME GİT</div>
+            </div>
+            <img
+              src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{
+                movie.poster_path
+              }}"
+            />
+            <h6 class="text-center text-light fw-normal">{{ movie.title }}</h6>
+            <p class="rate text-light my-2">
+              <i class="pi pi-star text-warning"></i
+              ><span>{{ movie.vote_average }}</span> /10
+            </p>
+            <p class="year mb-3">
+              <span>{{ movie.release_date | date: "yyyy" }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-paginator
+      [length]="totalResults"
+      [pageSize]="18"
+      (page)="changePage($event)"
+    ></mat-paginator>
+  </div>
+  
+</div>

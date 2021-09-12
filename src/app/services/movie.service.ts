@@ -38,6 +38,12 @@ export class MovieService {
     );
   }
 
+  getTopRatedMovies(page:number): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(
+      `${this.apiUrl}top_rated?api_key=${this.apiKey}&page=${page}&language=tr-TR`
+    );
+  }
+
   getNowPlayingMovies(page: number): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(
       `${this.apiUrl}now_playing?api_key=${this.apiKey}&page=${page}&language=${this.language}&region=US`
